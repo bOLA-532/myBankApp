@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class BankPage extends JPanel {
-    private static final String DEFAULT_PIN = "555";
+    private static final String DEFAULT_PIN = "5555";
 
     private static int LoginAttempts = 4;
 
