@@ -17,7 +17,7 @@ public class BankPage extends JPanel {
         setLayout(new FlowLayout());
 
         JLabel pinLabel = new JLabel("Enter your pin");
-        pinField = new JTextField(10);
+        pinField = new JTextField(15);
         JButton LoginButton = new JButton("Login");
 
 
@@ -26,7 +26,7 @@ public class BankPage extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String enteredpin = pinField.getText();
                 if (enteredpin.equals(DEFAULT_PIN)) {
-                    showWelcomePage();
+                    showAccountsPage();
                 } else {
                     LoginAttempts--;
                     if (LoginAttempts > 0) {
@@ -34,6 +34,7 @@ public class BankPage extends JPanel {
                     } else {
                         JOptionPane.showMessageDialog(frame, "Login failed. No attempts remaining.");
                         frame.dispose(); // Close the frame or take appropriate action
+
                     }
                 }
             }
@@ -43,20 +44,20 @@ public class BankPage extends JPanel {
         add(pinField);
         add(LoginButton);
     }
-
-    private void showWelcomePage() {
-        // Display the welcome page or take appropriate action
-        JOptionPane.showMessageDialog(frame, "Login successful. Welcome!");
-        // Add your code here to show the welcome page or perform other actions
+    private void showAccountsPage() {
+        frame.getContentPane().removeAll(); // Remove the current content
+        frame.add(new Accounts(frame)); // Add Accounts page to the frame
+        frame.revalidate(); // Refresh the frame
     }
-    // Create the frame and add the BankPage panel
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Bank Page");
+        JFrame frame = new JFrame("ACCOUNTS");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 200);
         frame.setLocationRelativeTo(null);
 
         BankPage bankPage = new BankPage(frame);
+        bankPage.setBackground(new Color(255, 204, 229)); // Light pink color
         frame.add(bankPage);
 
         frame.setVisible(true);

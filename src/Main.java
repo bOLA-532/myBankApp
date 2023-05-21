@@ -12,6 +12,7 @@ public class Main {
                 welcomeFrame.setLocationRelativeTo(null);
 
                 WelcomePage welcomePage = new WelcomePage(welcomeFrame);
+                welcomePage.setBackground(new Color(204, 229, 255)); // Light blue color
                 welcomeFrame.add(welcomePage);
 
                 // Create BankPage
@@ -21,6 +22,7 @@ public class Main {
                 bankFrame.setLocationRelativeTo(null);
 
                 BankPage bankPage = new BankPage(bankFrame);
+                bankPage.setBackground(new Color(204, 229, 255)); // Light blue color
                 bankFrame.add(bankPage);
 
                 // Show the WelcomePage
