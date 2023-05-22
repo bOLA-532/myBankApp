@@ -8,6 +8,7 @@ public class Accounts extends JPanel {
     private JLabel myAccountTypeLabel;
     private JButton savingsButton;
     private JButton currentsButton;
+
     public Accounts(JFrame frame) {
         this.frame = frame;
         setBackground(new Color(230, 230, 230)); // Light gray color
@@ -25,6 +26,9 @@ public class Accounts extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll(); // Remove the current content
                 frame.revalidate(); // Refresh the frame
+                Functions functions = new Functions(frame, "Currents Account");
+                frame.add(functions);
+                frame.setVisible(true);
                     }
                 });
 
@@ -33,7 +37,9 @@ public class Accounts extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll(); // Remove the current content
                 frame.revalidate(); // Refresh the frame
-
+                Functions functions = new Functions(frame, "Savings Account");
+                frame.add(functions);
+                frame.setVisible(true);
             }
         });
         buttonPanel.add(currentsButton);
