@@ -21,8 +21,8 @@ public class Functions extends JPanel {
         depositButton = new JButton("Deposit");
         depositButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.getContentPane().removeAll(); // Remove the current content
-                frame.revalidate(); // Refresh the frame
+                createDepositFrame();
+
             }
         });
 
@@ -39,6 +39,42 @@ public class Functions extends JPanel {
 
 
         add(buttonPanel, BorderLayout.SOUTH);
+    }
+
+    private void createDepositFrame(){
+        JFrame depositFrame = new JFrame("Deposit");
+        depositFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        depositFrame.setSize(300,150);
+        depositFrame.setLocationRelativeTo(frame);
+
+
+        JPanel depositPanel = new JPanel();
+        depositPanel.setLayout(new BoxLayout(depositPanel, BoxLayout.Y_AXIS));
+
+        JLabel amountLabel = new JLabel("Amount:");
+        JTextField amountTextField = new JTextField(10);
+
+        JButton submitButton = new JButton("Enter Amount");
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String amountText = amountTextField.getText();
+                double amount = Double.parseDouble(amountText);
+                deposit(amount);
+                depositFrame.dispose();
+
+
+            }
+        });
+        depositPanel.add(Box.createVerticalGlue());
+        depositPanel.add(amountLabel);
+        depositPanel.add(amountTextField);
+        depositPanel.add(submitButton);
+        depositPanel.add(Box.createVerticalGlue());
+
+        depositFrame.add(depositPanel);
+        depositFrame.setVisible(true);
+
     }
 
     public static void main(String[] args) {
@@ -58,6 +94,11 @@ public class Functions extends JPanel {
     }
 
     public void deposit(double amount) {
+        // implement the deposit logic
+        //update the balance
+        System.out.println("Deposit amount:" + amount);
+
+
 
     }
 }
