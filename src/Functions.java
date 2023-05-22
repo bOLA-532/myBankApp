@@ -8,8 +8,10 @@ public class Functions extends JPanel {
     private JFrame frame;
     private JButton depositButton;
     private JButton withdrawalButton;
-    public Functions(JFrame frame) {
+    private String accountType;
+    public Functions(JFrame frame, String accountType) {
         this.frame = frame;
+        this.accountType = accountType;
         setBackground(new Color(230, 230, 230)); // Light gray color
         setLayout(new BorderLayout());
 
@@ -47,7 +49,7 @@ public class Functions extends JPanel {
                 frame.setSize(300, 200);
                 frame.setLocationRelativeTo(null);
 
-                Functions functions = new Functions(frame);
+                Functions functions = new Functions(frame, "Currents Account");
                 frame.add(functions);
 
                 frame.setVisible(true);
