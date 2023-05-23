@@ -14,6 +14,8 @@ public class Main {
                 WelcomePage welcomePage = new WelcomePage(welcomeFrame);
                 welcomePage.setBackground(new Color(204, 229, 255)); // Light blue color
                 welcomeFrame.add(welcomePage);
+                // Show the WelcomePage
+
 
                 // Create BankPage
                 JFrame bankFrame = new JFrame("Bank Page");

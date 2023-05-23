@@ -9,6 +9,7 @@ public class Accounts extends JPanel {
     private JButton savingsButton;
     private JButton currentsButton;
 
+
     public Accounts(JFrame frame) {
         this.frame = frame;
         setBackground(new Color(230, 230, 230)); // Light gray color
