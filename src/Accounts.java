@@ -69,4 +69,7 @@ public class Accounts extends JPanel {
     public void deposit(double amount) {
 
     }
+
+    public void withdraw(double amount) {
+    }
 }
