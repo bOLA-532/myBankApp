@@ -8,7 +8,6 @@ public class SavingsAccount extends Accounts {
     private double balance;
 
     private final JButton savingsButton;
-    private JButton SavingsButtonButton;
 
 
     public SavingsAccount() {
@@ -26,8 +25,7 @@ public class SavingsAccount extends Accounts {
         savingsButton = new JButton("Savings Account");
         savingsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                withdraw(20000.0);
-
+                Withdrawal(WITHDRAWAL_LIMIT);
             }
         });
         buttonPanel.add(savingsButton);
@@ -39,7 +37,7 @@ public class SavingsAccount extends Accounts {
         if (amount <= WITHDRAWAL_LIMIT) {
             if (amount <= balance) {
                 balance -= amount;
-                System.out.println("withdrawal amount:" + amount);
+                System.out.println("withdrawnnnnn amount:" + amount);
                 System.out.println("New balance:" + balance);
 
             } else {
@@ -49,5 +47,7 @@ public class SavingsAccount extends Accounts {
             System.out.println("Withdrawal limit exceeded");
         }
     }
+
+
 }
 

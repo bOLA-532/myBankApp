@@ -49,7 +49,7 @@ public class Functions extends JPanel {
         JLabel amountLabel = new JLabel("Amount:");
         JTextField amountTextField = new JTextField(10);
 
-        JButton submitButton = new JButton("Enter Amount");
+        JButton submitButton = new JButton("Proceed");
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +82,7 @@ public class Functions extends JPanel {
         JLabel amountLabel = new JLabel("Amount:");
         JTextField amountTextField = new JTextField(10);
 
-        JButton submitButton = new JButton("Enter Amount");
+        JButton submitButton = new JButton("Proceed");
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
