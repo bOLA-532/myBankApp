@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SavingsAccount extends Accounts{
+    private static final double WITHDRAWAL_LIMIT = 20000.0;
 private double balance;
 
     private final JButton savingsButton;
@@ -26,12 +27,19 @@ private double balance;
             savingsButton= new JButton("Savings Account");
             savingsButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    withdraw(20000.0);
 
                 }
             });
             buttonPanel.add(savingsButton);
             add(myAccountTypeLabel, BorderLayout.CENTER);
             add(buttonPanel,BorderLayout.SOUTH);
+        }
+        public void Withdrawal(double amount ){
+            if (amount <= WITHDRAWAL_LIMIT){
+                if (amount <=
+
+            }
         }
     }
 
