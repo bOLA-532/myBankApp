@@ -50,6 +50,10 @@ public class Accounts extends JPanel {
         add(buttonPanel, BorderLayout.SOUTH);
             }
 
+    public Accounts() {
+
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
