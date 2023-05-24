@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SavingsAccount extends Accounts{
-
+private double balance;
 
     private final JButton savingsButton;
     private JButton SavingsButtonButton;
@@ -12,6 +12,8 @@ public class SavingsAccount extends Accounts{
 
         public SavingsAccount() {
             super();
+            balance = 100000.0;
+
 
 
             JLabel myAccountTypeLabel = new JLabel("Pick Your Account Type");
@@ -21,12 +23,15 @@ public class SavingsAccount extends Accounts{
 
             JPanel buttonPanel = new JPanel(new FlowLayout()); // Use FlowLayout for button panel
 
-            savingsButton= new JButton("Currents Account");
+            savingsButton= new JButton("Savings Account");
             savingsButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
 
                 }
             });
+            buttonPanel.add(savingsButton);
+            add(myAccountTypeLabel, BorderLayout.CENTER);
+            add(buttonPanel,BorderLayout.SOUTH);
         }
     }
 
