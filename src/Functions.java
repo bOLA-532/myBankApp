@@ -8,6 +8,9 @@ public class Functions extends JPanel {
     private JButton depositButton;
     private JButton withdrawalButton;
     private String accountType;
+    private static final double WITHDRAWAL_LIMIT = 20000; // Withdrawal limit constant
+    private double accountBalance;
+
 
     public Functions(JFrame frame, String accountType) {
         this.frame = frame;
@@ -88,6 +91,7 @@ public class Functions extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String amountText = amountTextField.getText();
                 double amount = Double.parseDouble(amountText);
+
                 withdraw(amount);
                 withdrawFrame.dispose();
             }
@@ -128,6 +132,17 @@ public class Functions extends JPanel {
     private void withdraw(double amount) {
         // implement the withdrawal logic
         // update the balance
-        System.out.println("Withdrawal amount: " + amount);
+        if (amount <= 0) {
+            System.out.println("Invalid withdrawal amount.");
+        } else if (amount > WITHDRAWAL_LIMIT) {
+            System.out.println("Withdrawal amount exceeds the limit of " + WITHDRAWAL_LIMIT);
+        } else if (amount > accountBalance) {
+            System.out.println("Insufficient funds for withdrawal.");
+        } else {
+            // Process the withdrawal
+            accountBalance -= amount;
+            System.out.println("Withdrawal amount: " + amount);
+            System.out.println("New account balance: " + accountBalance);
+        }
     }
 }
