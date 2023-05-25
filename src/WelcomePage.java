@@ -11,11 +11,13 @@ public class WelcomePage extends JPanel {
         this.frame = frame;
         setLayout(new BorderLayout());
 
-        welcomeLabel = new JLabel("Welcome to myBankApp!");
-        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        welcomeLabel = new JLabel("Welcome to OPPSBANK!");
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 20));
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        startButton = new JButton("Start");
+        startButton = new JButton("Continue");
+        startButton.setFont(new Font("Arial",Font.ITALIC,20));
+        startButton.setHorizontalAlignment(JLabel.CENTER);
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll(); // Remove the current content

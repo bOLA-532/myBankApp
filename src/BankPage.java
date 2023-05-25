@@ -12,13 +12,22 @@ public class BankPage extends JPanel {
 
     private JTextField pinField;
 
+
+
     public BankPage(JFrame frame) {
-        this.frame = frame;
+        this.frame= frame;
         setLayout(new FlowLayout());
+
+
+
+
 
         JLabel pinLabel = new JLabel("Enter your pin");
         pinField = new JTextField(15);
         JButton LoginButton = new JButton("Login");
+        pinLabel.setHorizontalAlignment(JLabel.CENTER);
+
+
 
 
         LoginButton.addActionListener(new ActionListener() {
@@ -57,7 +66,7 @@ public class BankPage extends JPanel {
         frame.setLocationRelativeTo(null);
 
         BankPage bankPage = new BankPage(frame);
-        bankPage.setBackground(new Color(255, 204, 229)); // Light pink color
+        bankPage.setBackground(new Color(236, 124, 181)); // Light pink color
         frame.add(bankPage);
 
         frame.setVisible(true);
