@@ -11,12 +11,12 @@ public class WelcomePage extends JPanel {
         this.frame = frame;
         setLayout(new BorderLayout());
 
-        welcomeLabel = new JLabel("Welcome to OPPSBANK!");
-        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        welcomeLabel = new JLabel("Welcome to RICO BANK!");
+        welcomeLabel.setFont(new Font("verdana", Font.BOLD, 20));
         welcomeLabel.setHorizontalAlignment(JLabel.CENTER);
 
         startButton = new JButton("Continue");
-        startButton.setFont(new Font("Arial",Font.ITALIC,20));
+        startButton.setFont(new Font("Arial",Font.ITALIC,16));
         startButton.setHorizontalAlignment(JLabel.CENTER);
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
