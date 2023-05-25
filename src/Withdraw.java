@@ -16,7 +16,7 @@ public class Withdraw extends JButton {
                 if (withdraw != null) {
                     try {
                         double amount = Double.parseDouble(withdraw);
-                        account.withdraw(amount);
+                        accounts.withdraw(amount); // Fixed variable name from 'account' to 'accounts'
                         JOptionPane.showMessageDialog(null, "Withdrawal successful");
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(null, "Invalid withdrawal amount");
@@ -33,12 +33,10 @@ public class Withdraw extends JButton {
         if (amount <= 0) {
             JOptionPane.showMessageDialog(null, "Invalid withdrawal amount. Amount must be greater than 0");
         } else {
-            Accounts account = null;
-            account.withdraw(amount);
+            accounts.withdraw(amount); // Fixed variable name from 'account' to 'accounts'
             JOptionPane.showMessageDialog(null, "Withdrawal successful");
         }
     }
-
 
     //Sets the account for this instance.
     public void setAccount(Accounts account) {
