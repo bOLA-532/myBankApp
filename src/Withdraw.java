@@ -38,6 +38,9 @@ public class Withdraw extends JButton {
             JOptionPane.showMessageDialog(null, "Withdrawal successful");
         }
     }
+
+
+    //Sets the account for this instance.
     public void setAccount(Accounts account) {
         this.accounts = account;
     }
