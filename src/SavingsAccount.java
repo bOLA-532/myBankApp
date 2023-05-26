@@ -43,8 +43,9 @@ public class SavingsAccount extends Accounts {
             } else {
                 System.out.println("Insufficient funds");
             }
-        }else {
+        } else {
             System.out.println("Withdrawal limit exceeded");
+
         }
     }
 

@@ -15,7 +15,7 @@ public class Deposit extends JButton {
                 String deposit = JOptionPane.showInputDialog("Enter a deposit amount");
                 if (deposit != null){
                     double amount = Double.parseDouble(deposit);
-                    account.deposit(amount);
+                  //  account.deposit(amount);
                 }
             }
         });

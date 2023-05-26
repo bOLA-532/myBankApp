@@ -1,53 +1,61 @@
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class BankPage extends JPanel {
     private static final String DEFAULT_PIN = "5555";
 
-    private static int loginAttempts = 4;
+    private static int LoginAttempts = 4;
 
     private JFrame frame;
 
-    private JPasswordField pinField;
+    private JTextField pinField;
+
+
 
     public BankPage(JFrame frame) {
-        this.frame = frame;
+        this.frame= frame;
         setLayout(new FlowLayout());
 
-        JLabel pinLabel = new JLabel("Enter your pin");
-        pinField = new JPasswordField(15);
-        JButton loginButton = new JButton("Login");
 
-        loginButton.addActionListener(new ActionListener() {
+
+        JLabel pinLabel = new JLabel("Enter your pin");
+        pinField = new JTextField(15);
+        JButton LoginButton = new JButton("Login" );
+        pinLabel.setHorizontalAlignment(JLabel.CENTER);
+
+
+
+
+        LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                char[] enteredPinChars = pinField.getPassword();
-                String enteredPin = new String(enteredPinChars);
-                if (enteredPin.equals(DEFAULT_PIN)) {
+                String enteredpin = pinField.getText();
+                if (enteredpin.equals(DEFAULT_PIN)) {
                     showAccountsPage();
                 } else {
-                    loginAttempts--;
-                    if (loginAttempts > 0) {
-                        JOptionPane.showMessageDialog(frame, "Invalid PIN. You have " + loginAttempts + " attempts remaining.");
+                    LoginAttempts--;
+                    if (LoginAttempts > 0) {
+                        JOptionPane.showMessageDialog(frame, "Invalid PIN. You have " + LoginAttempts + " attempts remaining.");
                     } else {
                         JOptionPane.showMessageDialog(frame, "Login failed. No attempts remaining.");
                         frame.dispose(); // Close the frame or take appropriate action
+
+
                     }
                 }
-                // Clear the password field after each login attempt
-                pinField.setText("");
             }
         });
 
         add(pinLabel);
         add(pinField);
-        add(loginButton);
+        add(LoginButton);
     }
-
     private void showAccountsPage() {
         frame.getContentPane().removeAll(); // Remove the current content
-        frame.add(new Accounts(frame)); // Add Accounts page to the frame
+        frame.add(new Accounts()); // Add Accounts page to the frame
         frame.revalidate(); // Refresh the frame
     }
 
@@ -58,7 +66,6 @@ public class BankPage extends JPanel {
         frame.setLocationRelativeTo(null);
 
         BankPage bankPage = new BankPage(frame);
-        bankPage.setBackground(new Color(255, 204, 229)); // Light pink color
         frame.add(bankPage);
 
         frame.setVisible(true);
