@@ -13,8 +13,8 @@ public class Main {
 
                 WelcomePage welcomePage = new WelcomePage(welcomeFrame);
                 welcomePage.setBackground(new Color(204, 229, 255)); // Light blue color
-                welcomeFrame.add(welcomePage);
-                // Show the WelcomePage
+                welcomeFrame.setContentPane(welcomePage);
+                welcomeFrame.setVisible(true);
 
 
                 // Create BankPage
@@ -25,10 +25,8 @@ public class Main {
 
                 BankPage bankPage = new BankPage(bankFrame);
                 bankPage.setBackground(new Color(204, 229, 255)); // Light blue color
-                bankFrame.add(bankPage);
+                bankFrame.setContentPane(bankPage);
 
-                // Show the WelcomePage
-                welcomeFrame.setVisible(true);
             }
         });
     }

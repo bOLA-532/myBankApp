@@ -9,38 +9,44 @@ public class Accounts extends JPanel {
     private JButton savingsButton;
     private JButton currentsButton;
 
-
-    public Accounts(JFrame frame) {
-        this.frame = frame;
+    public Accounts() {
         setBackground(new Color(230, 230, 230)); // Light gray color
         setLayout(new BorderLayout());
 
         myAccountTypeLabel = new JLabel("Pick Your Account Type");
         myAccountTypeLabel.setFont(new Font("Arial", Font.BOLD, 16));
         myAccountTypeLabel.setHorizontalAlignment(JLabel.CENTER);
-
-
         JPanel buttonPanel = new JPanel(new FlowLayout()); // Use FlowLayout for button panel
 
         currentsButton = new JButton("Currents Account");
+        currentsButton.setPreferredSize(new Dimension(150, 50)); // Set preferred size for savings button
         currentsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.getContentPane().removeAll(); // Remove the current content
-                frame.revalidate(); // Refresh the frame
-                Functions functions = new Functions(frame, "Currents Account");
-                frame.add(functions);
-                frame.setVisible(true);
-                    }
-                });
+                JFrame accountsFrame = new JFrame("Currents Account");
+                accountsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                accountsFrame.setSize(300, 200);
+                accountsFrame.setLocationRelativeTo(null);
+
+                Functions functions = new Functions(accountsFrame, "Currents Account");
+                accountsFrame.add(functions);
+
+                accountsFrame.setVisible(true);
+            }
+        });
 
         savingsButton = new JButton("Savings Account");
+        savingsButton.setPreferredSize(new Dimension(150, 50)); // Set preferred size for savings button
         savingsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.getContentPane().removeAll(); // Remove the current content
-                frame.revalidate(); // Refresh the frame
-                Functions functions = new Functions(frame, "Savings Account");
-                frame.add(functions);
-                frame.setVisible(true);
+                JFrame accountsFrame = new JFrame("Savings Account");
+                accountsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                accountsFrame.setSize(300, 200);
+                accountsFrame.setLocationRelativeTo(null);
+
+                Functions functions = new Functions(accountsFrame, "Savings Account");
+                accountsFrame.add(functions);
+
+                accountsFrame.setVisible(true);
             }
         });
         buttonPanel.add(currentsButton);
@@ -48,10 +54,6 @@ public class Accounts extends JPanel {
 
         add(myAccountTypeLabel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
-            }
-
-    public Accounts() {
-
     }
 
     public static void main(String[] args) {
@@ -62,18 +64,11 @@ public class Accounts extends JPanel {
                 frame.setSize(300, 200);
                 frame.setLocationRelativeTo(null);
 
-                Accounts accounts = new Accounts(frame);
+                Accounts accounts = new Accounts();
                 frame.add(accounts);
 
                 frame.setVisible(true);
             }
         });
-    }
-
-    public void deposit(double amount) {
-
-    }
-
-    public void withdraw(double amount) {
     }
 }

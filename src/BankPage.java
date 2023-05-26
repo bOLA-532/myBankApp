@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.*;
@@ -20,11 +21,9 @@ public class BankPage extends JPanel {
 
 
 
-
-
         JLabel pinLabel = new JLabel("Enter your pin");
         pinField = new JTextField(15);
-        JButton LoginButton = new JButton("Login");
+        JButton LoginButton = new JButton("Login" );
         pinLabel.setHorizontalAlignment(JLabel.CENTER);
 
 
@@ -56,7 +55,7 @@ public class BankPage extends JPanel {
     }
     private void showAccountsPage() {
         frame.getContentPane().removeAll(); // Remove the current content
-        frame.add(new Accounts(frame)); // Add Accounts page to the frame
+        frame.add(new Accounts()); // Add Accounts page to the frame
         frame.revalidate(); // Refresh the frame
     }
 
@@ -72,10 +71,3 @@ public class BankPage extends JPanel {
         frame.setVisible(true);
     }
 }
-
-
-
-
-
-
-
