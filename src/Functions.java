@@ -1,3 +1,5 @@
+import File.BalanceFileWriter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +29,8 @@ public class Functions extends JPanel {
                 createDepositFrame();
             }
         });
+
+
 
         withdrawalButton = new JButton("Withdrawal");
         withdrawalButton.addActionListener(new ActionListener() {
@@ -109,6 +113,10 @@ public class Functions extends JPanel {
     }
 
     public static void main(String[] args) {
+        BalanceFileWriter myObj = new BalanceFileWriter();
+        myObj.withdrawFromSavings(100); // Example withdrawal amount
+
+        // You can call other methods or perform additional operations here.
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame("FUNCTIONS");
@@ -146,4 +154,9 @@ public class Functions extends JPanel {
             System.out.println("New account balance: " + accountBalance);
         }
     }
+    public void writeBalanceToFile(double balance) {
+        BalanceFileWriter.writeBalance(balance);
+    }
+
+
 }
