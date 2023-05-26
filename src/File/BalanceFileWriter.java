@@ -9,7 +9,7 @@ public class BalanceFileWriter {
         myObj.withdrawFromSavings(100); // Example withdrawal amount
 
         // Call the writeData method and pass the balance value
-        myObj.writeData("My file", balance);
+        myObj.writeData("My file",balance);
     }
 
     public static void writeBalance(double balance) {
