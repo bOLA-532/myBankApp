@@ -6,7 +6,7 @@ public class BalanceFileWriter {
     public static void main(String[] args) {
         BalanceFileWriter myObj = new BalanceFileWriter();
         double balance = 100000; // Example balance value
-        myObj.withdrawFromSavings(100); // Example withdrawal amount
+        myObj.withdrawFromSavings(200); // Example withdrawal amount
 
         // Call the writeData method and pass the balance value
         myObj.writeData("My file",balance);
