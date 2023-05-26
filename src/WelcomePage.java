@@ -21,8 +21,12 @@ public class WelcomePage extends JPanel {
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().removeAll(); // Remove the current content
-                frame.add(new BankPage(frame)); // Add BankPage to the frame
-                frame.revalidate(); // Refresh the frame
+                BankPage bankPage = new BankPage(frame); // Create an instance of BankPage with the frame
+                bankPage.setBackground(new Color(173, 216, 230)); // Set the background color to light blue
+                frame.setContentPane(bankPage); // Set BankPage as the content pane of the frame
+                frame.pack(); // Adjust the frame size
+                frame.setLocationRelativeTo(null); // Center the frame on the screen
+                frame.setVisible(true); // Show the frame
             }
         });
 

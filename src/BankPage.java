@@ -44,6 +44,7 @@ public class BankPage extends JPanel {
                         JOptionPane.showMessageDialog(frame, "Login failed. No attempts remaining.");
                         frame.dispose(); // Close the frame or take appropriate action
 
+
                     }
                 }
             }
@@ -66,7 +67,6 @@ public class BankPage extends JPanel {
         frame.setLocationRelativeTo(null);
 
         BankPage bankPage = new BankPage(frame);
-        bankPage.setBackground(new Color(236, 124, 181)); // Light pink color
         frame.add(bankPage);
 
         frame.setVisible(true);
