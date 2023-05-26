@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Accounts extends JPanel {
     private JFrame frame;
     private JLabel myAccountTypeLabel;
@@ -57,6 +58,7 @@ public class Accounts extends JPanel {
     }
 
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame("ACCOUNTS");

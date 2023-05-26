@@ -1,0 +1,2 @@
+My file
+Current balance: 100000.0
