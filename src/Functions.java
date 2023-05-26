@@ -15,6 +15,7 @@ public class Functions extends JPanel {
     public Functions(JFrame frame, String accountType) {
         this.frame = frame;
         this.accountType = accountType;
+        this.accountBalance =100000;
         setBackground(new Color(230, 230, 230)); // Light gray color
         setLayout(new BorderLayout());
 
